@@ -36,6 +36,7 @@ images[currentActiveIndex].classList.add("d-block");
 prevBtn.addEventListener("click", function () {
   images[currentActiveIndex].classList.remove("d-block");
   currentActiveIndex--;
+  if (currentActiveIndex < 0) currentActiveIndex = images.length - 1;
   images[currentActiveIndex].classList.add("d-block");
 });
 
@@ -43,5 +44,6 @@ prevBtn.addEventListener("click", function () {
 nextBtn.addEventListener("click", function () {
   images[currentActiveIndex].classList.remove("d-block");
   currentActiveIndex++;
+  if (currentActiveIndex === images.length) currentActiveIndex = 0;
   images[currentActiveIndex].classList.add("d-block");
 });
