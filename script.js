@@ -32,3 +32,16 @@ const images = document.querySelectorAll(".gallery img");
 //Mostra imagine
 images[currentActiveIndex].classList.add("d-block");
 
+//Pulsante PREV
+prevBtn.addEventListener("click", function () {
+  images[currentActiveIndex].classList.remove("d-block");
+  currentActiveIndex--;
+  images[currentActiveIndex].classList.add("d-block");
+});
+
+//Pulsante NEXT
+nextBtn.addEventListener("click", function () {
+  images[currentActiveIndex].classList.remove("d-block");
+  currentActiveIndex++;
+  images[currentActiveIndex].classList.add("d-block");
+});
