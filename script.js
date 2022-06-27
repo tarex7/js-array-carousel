@@ -28,22 +28,37 @@ thumbnails.innerHTML = image;
 
 //Prende tutte le immagini nella gallery
 const images = document.querySelectorAll(".gallery img");
+const thumbnailsImages = document.querySelectorAll(".thumbnails img");
 
 //Mostra imagine
 images[currentActiveIndex].classList.add("d-block");
+//Seleziona anterprima
+thumbnailsImages[currentActiveIndex].classList.add("selected");
 
 //Pulsante PREV
 prevBtn.addEventListener("click", function () {
   images[currentActiveIndex].classList.remove("d-block");
+  thumbnailsImages[currentActiveIndex].classList.remove("selected");
+
   currentActiveIndex--;
+
   if (currentActiveIndex < 0) currentActiveIndex = images.length - 1;
+
   images[currentActiveIndex].classList.add("d-block");
+  thumbnailsImages[currentActiveIndex].classList.add("selected");
 });
 
 //Pulsante NEXT
 nextBtn.addEventListener("click", function () {
   images[currentActiveIndex].classList.remove("d-block");
+  thumbnailsImages[currentActiveIndex].classList.remove("selected");
+
   currentActiveIndex++;
+
   if (currentActiveIndex === images.length) currentActiveIndex = 0;
+
   images[currentActiveIndex].classList.add("d-block");
+
+  thumbnailsImages[currentActiveIndex].classList.add("selected");
 });
+
