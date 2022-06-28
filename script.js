@@ -1,12 +1,3 @@
-//Buttons
-const prevBtn = document.getElementById("prev");
-const nextBtn = document.getElementById("next");
-const gallery = document.querySelector(".gallery");
-const thumbnails = document.querySelector(".thumbnails");
-
-//Active index
-let currentActiveIndex = 0;
-
 //Array immagini
 const imgSrc = [
   "./img/01.jpg",
@@ -22,6 +13,12 @@ for (let i = 0; i < imgSrc.length; i++) {
   image += `<img src=${imgSrc[i]}  alt = "landscape-${i + 1}"/>`;
 }
 
+//Buttons
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+const gallery = document.querySelector(".gallery");
+const thumbnails = document.querySelector(".thumbnails");
+
 //Aggiunge immagini nell HTML
 gallery.innerHTML = image;
 thumbnails.innerHTML = image;
@@ -29,6 +26,9 @@ thumbnails.innerHTML = image;
 //Prende tutte le immagini nella gallery
 const images = document.querySelectorAll(".gallery img");
 const thumbnailsImages = document.querySelectorAll(".thumbnails img");
+
+//Active index
+let currentActiveIndex = 0;
 
 //Mostra imagine
 images[currentActiveIndex].classList.add("d-block");
@@ -61,4 +61,3 @@ nextBtn.addEventListener("click", function () {
 
   thumbnailsImages[currentActiveIndex].classList.add("selected");
 });
-
